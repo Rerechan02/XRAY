@@ -45,5 +45,8 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
 echo "Host : $SUB_DOMAIN"
 echo $SUB_DOMAIN > /root/domain
 echo $SUB_DOMAIN > /etc/xray/domain
-echo $SUB_DOMAIN > /etc/root/domain
+ echo "$SUB_DOMAIN" > /root/scdomain 
+ echo "$SUB_DOMAIN" > /etc/xray/domain 
+ echo "$SUB_DOMAIN" > /etc/xray/scdomain 
+ echo "IP=$SUB_DOMAIN" > /var/lib/ipvps.conf
 rm -f /root/cf.sh
